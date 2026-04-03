@@ -1,25 +1,20 @@
-pipeline{
+node {
 
-   agent any
-    stages{
-        stage("Build"){
-            steps{
-                echo "========executing Build========"
-            }
-        }
+    git branch: 'declarativepipeline', url: 'https://github.com/AMJIDMOUAD/simple-java-app.git'
 
-        stage("Test"){
-            steps{
-                echo "========executing Test========"
-            }
-        }
-
-
-        stage("Deploy"){
-            steps{
-                echo "========executing Deploy========"
+    stage('Build') {
+        sh 'echo "Building..."'
+    }
+    stage('Test') {
+        sh 'echo "Testing..."'
+    }
+    stage('Deploy') {
+        script {
+            if (env.BRANCH_NAME == 'master') {
+                sh 'echo "Deploying to production..."'
+            } else {
+                sh 'echo "Deploying to :${env.BRANCH_NAME}..."'
             }
         }
     }
 }
-   
