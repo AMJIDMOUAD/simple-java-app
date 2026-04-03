@@ -9,7 +9,7 @@ node {
         sh 'echo "Testing..."'
     }
     stage('Deploy') {
-              echo "Branch is ${env.BRANCH_NAME}"
+        sh "echo 'Branch is ' + env.BRANCH_NAME"
 
       
     }
