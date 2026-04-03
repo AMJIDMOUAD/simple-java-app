@@ -9,8 +9,8 @@ node {
         sh 'echo "Testing..."'
     }
     stage('Deploy') {
-       
-                sh 'echo " Branche is $(env.BRANCH_NAME)"'
+                       
+                sh 'echo " Branche is"  $(env.BRANCH_NAME)'
             
        
     }
