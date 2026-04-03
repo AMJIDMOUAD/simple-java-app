@@ -1,11 +1,6 @@
 node {
-    stage('Checkout') {
-        checkout scm: [
-            $class: 'GitSCM',
-            branches: [[name: 'declarativepip']],
-            userRemoteConfigs: [[url: 'https://github.com/AMJIDMOUAD/simple-java-app.git']]
-        ]
-    }
+
+    git branch: 'declarativepip', url: 'https://github.com/AMJIDMOUAD/simple-java-app.git'
 
     stage('Build') {
         sh 'echo "Building..."'
@@ -14,6 +9,8 @@ node {
         sh 'echo "Testing..."'
     }
     stage('Deploy') {
-        sh 'echo "Branch is ${env.BRANCH_NAME}"'
+              echo "Branch is ${env.BRANCH_NAME}"
+
+      
     }
 }
