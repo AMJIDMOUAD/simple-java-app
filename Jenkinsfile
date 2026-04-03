@@ -9,12 +9,9 @@ node {
         sh 'echo "Testing..."'
     }
     stage('Deploy') {
-       try {
-            if (env.BRANCH_NAME == 'declarativepip') {
+       
                 sh 'echo "Deploying to production..."'
-            } 
-        } catch (Exception e) {
-            echo "Deployment failed: ${e.message}"
-        }
+            
+       
     }
 }
