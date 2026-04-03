@@ -1,6 +1,6 @@
 node {
 
-    git branch: 'declarativepipeline', url: 'https://github.com/AMJIDMOUAD/simple-java-app.git'
+    git branch: 'declarativepip', url: 'https://github.com/AMJIDMOUAD/simple-java-app.git'
 
     stage('Build') {
         sh 'echo "Building..."'
